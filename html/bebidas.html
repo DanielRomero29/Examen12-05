@@ -16,11 +16,11 @@
             {% if Bebida %}
             <p><strong>Nombre:</strong> {{ Bebida.nombre }}</p>
             <p><strong>precio:</strong> {{ Bebida.precio }}</p>
-            {% if (Bebida.Nombre == "Cerveza") %}
-            <p><strong>tipo_cerveza:</strong> {{ Bebida.tipo_cerveza }}</p>
-            {% elif (Bebida.Nombre== "Refresco") %}
+            {% if (Bebida.nombre == "Cerveza") %}
+            <p><strong>Tipo de cerveza:</strong> {{ Bebida.tipo_cerveza }}</p>
+            {% elif (Bebida.nombre== "Refresco") %}
             <p><strong>Sabor:</strong> {{ Bebida.sabor }}</p>
-            {% elif (Bebida.Nombre == "te") %}
+            {% elif (Bebida.nombre == "te") %}
             <p><strong>Variedad:</strong> {{ Bebida.variedad }}</p>
             {% endif %}
             <p><strong>Descripcion:</strong> {{ Bebida.descripcion() }}</p>

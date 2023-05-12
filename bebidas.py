@@ -15,7 +15,7 @@ class Cerveza(Bebidas):
         self.tipo_cerveza = tipo_cerveza
 
     def descripcion(self):
-        print(f"La cerveza {self.nombre} es del tipo {self.tipo_cerveza}. Su precio es {self.precio}.")
+        return f"La cerveza {self.nombre} es del tipo {self.tipo_cerveza}. Su precio es {self.precio}."
 
 class Refresco(Bebidas):
     def __init__(self, nombre, precio, sabor):
@@ -23,7 +23,7 @@ class Refresco(Bebidas):
         self.sabor = sabor
 
     def descripcion(self):
-        print(f"El refresco {self.nombre} es de sabor {self.sabor}. Su precio es {self.precio}.")
+        return f"El refresco {self.nombre} es de sabor {self.sabor}. Su precio es {self.precio}."
 
 class Te(Bebidas):
     def __init__(self, nombre, precio, variedad):
@@ -31,4 +31,4 @@ class Te(Bebidas):
         self.variedad = variedad
 
     def descripcion(self):
-        print(f"El té {self.nombre} es de la variedad {self.variedad}. Su precio es {self.precio}.")
+        return f"El té {self.nombre} es de la variedad {self.variedad}. Su precio es {self.precio}."

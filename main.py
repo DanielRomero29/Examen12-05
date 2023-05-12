@@ -13,14 +13,14 @@ def mostrar_Bebidas():
     bebida= request.form["Bebida"]
     precio = request.form["precio"]
     if bebida == "Cerveza":
-        tipo_cerveza = request.form["tipo_cerveza"]
-        Bebida_ingresada = Cerveza(bebida, precio, tipo_cerveza)
+        tercera_var = request.form["tipo_cerveza"]
+        Bebida_ingresada = Cerveza(bebida, precio, tercera_var)
+    elif bebida == "Refresco":
+        tercera_var = request.form["sabor"]
+        Bebida_ingresada = Refresco(bebida, precio, tercera_var)
     elif bebida == "te":
-        variedad = request.form["variedad"]
-        Bebida_ingresada = Te(bebida, precio, variedad)
-    else:
-        sabor = request.form["sabor"]
-        Bebida_ingresada = Refresco(bebida, precio, sabor)
+        tercera_var = request.form["variedad"]
+        Bebida_ingresada = Te(bebida, precio, tercera_var)
  # Renderizar la página de Bebidas con la Bebida seleccionada
     return render_template("Bebidas.html", Bebida=Bebida_ingresada)
 
