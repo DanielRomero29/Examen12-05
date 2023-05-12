@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Información de Bebidas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+  <form method="post" action="/Bebidas">
+    <legend>Información de Bebidas</legend>
+    <fieldset  class="d-grid" >
+      <label for="Bebida">Selecciona una Bebida:</label>
+      <select id="Bebida" name="Bebida" class="col-form-label col-form-label-sm">
+        <option value="Cerveza">Cerveza</option>
+        <option value="Refresco">Refresco</option>
+        <option value="te">Té</option>
+      </select>
+      <label for="Precio" class="col-form-label col-form-label-sm">Precio:</label>
+      <input type="number" id="precio" name="precio" >
+      <div id="atributos">
+        <label for="tipo_cerveza" class="col-form-label col-form-label-sm">Tipo Cerveza:</label>
+        <input type="text" id="tipo_cerveza" name="tipo_cerveza" >
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Revisar</button>
+  </form>
+
+  <script>
+    const BebidaSelect = document.getElementById("Bebida");
+    const atributosDiv = document.getElementById("atributos");
+
+    function mostrarAtributos() {
+      const Bebida = BebidaSelect.value;
+      atributosDiv.innerHTML = "";
+
+      if (Bebida === "Cerveza") {
+        atributosDiv.innerHTML += `
+  <label for="tipo_cerveza" class="col-form-label col-form-label-sm">Tipo Cerveza:</label>
+        <input type="text" id="tipo_cerveza" name="tipo_cerveza" >
+          `;
+      } else if (Bebida === "Refresco") {
+        atributosDiv.innerHTML += `
+            <label for="sabor" class="col-form-label col-form-label-sm">Sabor:</label>
+            <input type="text" id="sabor" name="sabor">
+          `;
+      } else if (Bebida === "te") {
+        atributosDiv.innerHTML += `
+            <label for="variedad" class="col-form-label col-form-label-sm">Variedad:</label>
+            <input type="text" id="variedad" name="variedad">
+          `;
+      }
+    }
+    BebidaSelect.addEventListener("change", mostrarAtributos);
+  </script>
+</body>
+
+</html>

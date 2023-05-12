@@ -1,0 +1,36 @@
+<!--Bebidas.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Información de la Bebida</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+    <fieldset>
+        <legend>Información de Bebidas</legend>
+        <div class="form-group row">
+            {% if Bebida %}
+            <p><strong>Nombre:</strong> {{ Bebida.nombre }}</p>
+            <p><strong>precio:</strong> {{ Bebida.precio }}</p>
+            {% if (Bebida.Nombre == "Cerveza") %}
+            <p><strong>tipo_cerveza:</strong> {{ Bebida.tipo_cerveza }}</p>
+            {% elif (Bebida.Nombre== "Refresco") %}
+            <p><strong>Sabor:</strong> {{ Bebida.sabor }}</p>
+            {% elif (Bebida.Nombre == "te") %}
+            <p><strong>Variedad:</strong> {{ Bebida.variedad }}</p>
+            {% endif %}
+            <p><strong>Descripcion:</strong> {{ Bebida.descripcion() }}</p>
+            {% else %}
+            <p>La Bebida seleccionada no fue encontrada en la lista.</p>
+            {% endif %}
+            <form method="get" action="/">
+                <button type="submit" class="btn btn-primary">Mas Bebidas</button>
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>
